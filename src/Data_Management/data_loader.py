@@ -285,7 +285,7 @@ class DataLoader_TMDB:
     if not isinstance( verbose, bool ):
       raise TypeError( "Param 'verbose' must be boolean" )
 
-    # 1. cargamos el dataframe para el preprocesamiento (por si antes se trabajo de forma malintencionada o si se ejecuta el codigo por segunda vez)
+    # 1. cargamos el dataframe para el preprocesamiento (por si antes se trabajo de forma malintencionada o si se ejecuta el código por segunda vez)
     self.load_set ( )
 
     # 2. empezar con el preprocesamiento
@@ -300,17 +300,17 @@ class DataLoader_TMDB:
 
     # =================================================
     
-    # remove homepage, tagline columns
+    # se remueve las columnas 'homepage' y 'tagline'
     merge = merge.drop ( ['homepage', 'tagline'], axis=1 )
 
-    # fillup the missing values in the columns
+    # se rellena con los valores faltantes de las columnas
     merge[ 'overview' ] = merge[ 'overview' ].fillna( '' )
     merge[ 'release_date' ] = merge[ 'release_date' ].fillna( '' )
     merge[ 'runtime' ] = merge[ 'runtime' ].fillna( '' )
 
     if verbose: 
       print ( f'After: Missing Values: { merge.isnull().sum().sum() }' )
-    # check the missing values again
+    # se verifican los valores faltantes nuevamente
 
     merge = merge[ [ 
       'id',
@@ -327,7 +327,7 @@ class DataLoader_TMDB:
     if verbose: 
       print ( '\n\n', merge.head( 10 ) )
 
-    # Processing columns
+    # Procesando columnas
     ## GENRES
 
     if verbose:

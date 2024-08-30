@@ -10,7 +10,7 @@ from sklearn.metrics.pairwise import cosine_distances
 
 
 
-# Funciones utiles para el analisis exploratorio de datos en el dataset: MOVIELENS
+# Funciones útiles para el ánalisis exploratorio de datos en el dataset: MOVIELENS
 
 def count_ratings_by_gender ( df: pd.DataFrame ) -> pd.Series:
   """
@@ -82,7 +82,7 @@ def count_people_by_age ( df: pd.DataFrame ) -> pd.Series:
 
 
 
-# Funciones utiles para el analisis exploratorio de datos en el dataset: TMDB 5000
+# Funciones útiles para el análisis exploratorio de datos en el dataset: TMDB 5000
 
 # get_counts_of_movies_by_original_language
 def count_movies_by_original_language ( merge: pd.DataFrame ) -> pd.Series:

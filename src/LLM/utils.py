@@ -23,7 +23,7 @@ def load_environment () -> None:
   """
   Carga las variables de entorno necesarias para el funcionamiento del programa
 
-  Especificamente buscar las variables de entorno siguientes:
+  Específicamente buscar las variables de entorno siguientes:
   - `google_api_key` : clave de API de Google  
   """
   
@@ -35,7 +35,7 @@ def get_model() -> GoogleGenerativeAI:
   Inicializa y devuelve una instancia de GoogleGenerativeAI
   con configuraciones predeterminadas 
 
-  Contiene una funcion para cargar las credenciales de Google API 
+  Contiene una función para cargar las credenciales de Google API 
   desde el entorno y crea una instancia de GoogleGenerativeAI
   usando el modelo 'gemini-1.5-pro'
 
@@ -56,7 +56,7 @@ def get_embedding() -> GoogleGenerativeAIEmbeddings:
   """
   Inicializa y devuelve una instancia de `GoogleGenerativeAIEmbeddings`
 
-  Esta funcion carga las credenciales de Google API desde el entorno y crea una instancia de `GoogleGenerativeAIEmbeddings`
+  Esta función carga las credenciales de Google API desde el entorno y crea una instancia de `GoogleGenerativeAIEmbeddings`
 
   Returns:
       GoogleGenerativeAIEmbeddings: instancia preconfigurada del embedding model 
@@ -72,13 +72,13 @@ def get_embedding() -> GoogleGenerativeAIEmbeddings:
 
 def prompt_template_QA(question: str, k: int, model: GoogleGenerativeAI) -> str:
   """
-  Este metodo construye un template de chat que incluye instrucciones claras para el modelo de IA sobre como responder 
-  a una pregunta especifica y sugerir posibles preguntas relacionadas. 
+  Este método construye un template de chat que incluye instrucciones claras para el modelo de IA sobre cómo responder 
+  a una pregunta específica y sugerir posibles preguntas relacionadas. 
 
-  Utiliza parametro `k` para especificar la cantidad de recomendaciones de preguntas debe incluir en su respuesta
+  Utiliza parámetro `k` para especificar la cantidad de recomendaciones de preguntas debe incluir en su respuesta
 
   Args:
-      question (str): la pregunta especifica que se desea que el modelo responda 
+      question (str): la pregunta específica que se desea que el modelo responda 
       k (int): cantidad de recomendaciones de preguntas relacionadas que se deben incluir en la respuesta 
       model (GoogleGenerativeAI): instancia del modelo de IA utilizado para generar respuesta
 
@@ -89,7 +89,7 @@ def prompt_template_QA(question: str, k: int, model: GoogleGenerativeAI) -> str:
 
   prompt = ChatPromptTemplate.from_template(
     """ 
-    Se lo mas simple posible para responder la siguiente pregunta 
+    Se lo más simple posible para responder la siguiente pregunta 
     y da algunas recomendaciones a preguntas que se parezcan al tema de la pregunta
 
     Solo devuelve la respuesta. Seguido de las preguntas. Ejemplo:
@@ -101,8 +101,8 @@ def prompt_template_QA(question: str, k: int, model: GoogleGenerativeAI) -> str:
     - Pregunta sugerida 2
     - Pregunta sugerida 3  
 
-    El numero de preguntas que sugieres debe estar fijado al siguiente numero:
-    Numero de recomendaciones: {k}
+    El número de preguntas que sugieres debe estar fijado al siguiente número:
+    Número de recomendaciones: {k}
 
     Q: {question}
     A: 

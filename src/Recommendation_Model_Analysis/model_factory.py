@@ -45,7 +45,7 @@ class Model:
     return self.model.predict ( uid=userID, iid=itemID, r_ui=r_ui, verbose=False )
 
 
-# sistema de recomendacion hibrido modelo paralelo metodo weighted
+# sistema de recomendación híbrido modelo paralelo método weighted
 class HybridModel_Weighted ( AlgoBase ):
 
   def __init__ (self, name: str, models: list[ Model ], weights: list[ float ], **kwargs):

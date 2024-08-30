@@ -44,7 +44,7 @@ def testing_class ( ) -> None:
   """_summary_
   """
 
-  st.write ( '# Clases del proyecto y aplicacion' )
+  st.write ( '# Clases del proyecto y aplicación' )
   st.write ( '## Clase `DataLoader`' )
 
   data_loader = DataLoader_Movielens ( )
@@ -154,7 +154,7 @@ def exploratory_data_analysis ( ) -> None:
   # ========================================================================================================
   st.markdown ( 
   '''
-  Grafica de Generos de las personas que calificaron
+  Gráfica de Géneros de las personas que calificaron
   ''' )
   gender_counts = count_ratings_by_gender ( df=user_set )
 

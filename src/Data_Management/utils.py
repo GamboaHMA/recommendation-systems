@@ -3,9 +3,9 @@ import ast
 
 def convert ( obj ) -> list: 
   L = [ ]  # empty list
-  for i in ast.literal_eval ( obj ):  # this function is used to convert string to list
+  for i in ast.literal_eval ( obj ):  # convierte un string en lista
     i[ 'name' ]
-    L.append( i[ 'name' ] )    # append the name of the genre 
+    L.append( i[ 'name' ] )    # añade nombre al género 
   return L
 
 def convert_3 ( obj ) -> list:
